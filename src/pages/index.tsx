@@ -18,7 +18,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-          test lorem
+          test lorem ipsum
             By{' '}
             <Image
               src="/vercel.svg"
