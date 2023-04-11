@@ -10,8 +10,12 @@ export const Header = () => {
     <div className="bg-primary  text-center grid h-screen">
         <SunIcon  className="absolute top-0 right-0 w-8 text-secondary m-5 hover:bg-pelengkap rounded-full delay-100"/>
         <Bars3BottomLeftIcon  className="absolute top-0 left-0 w-8 text-secondary m-5 hover:bg-pelengkap rounded-full delay-100"/>
+        <h1 className="text-4xl my-auto font-extrabold text-secondary">
+         Zacky Al-Baehaki
+        </h1>
         {/* test */}
         
+
         
         {/* test akhir */}
       <div className="absolute bottom-0 ">
