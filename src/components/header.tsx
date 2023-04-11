@@ -1,9 +1,9 @@
 import React from "react";
-import { siGithub, siEyeem } from "simple-icons";
+import { siGithub, siEyeem, siInstagram, siFacebook, siDribbble, siBehance } from "simple-icons";
 import { SunIcon, Bars3BottomLeftIcon } from "@heroicons/react/24/solid"
 
 export const Header = () => {
-  const logo = [siGithub, siEyeem, siGithub, siGithub, siGithub, siGithub];
+  const logo = [siGithub, siInstagram, siFacebook, siDribbble, siBehance, siEyeem];
 
   // console.log(siGithub)
   return (

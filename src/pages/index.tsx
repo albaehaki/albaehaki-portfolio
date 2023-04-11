@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import Cafetariaapp from "../assets/images/cafetaria-app.png";
 import { siNextdotjs, siTailwindcss, siFirebase } from "simple-icons";
+import { dataProjects } from "../data/project";
 
 // components
 import { Layout } from "../components/layout";
@@ -35,13 +36,16 @@ export default function Home() {
           <h1 className="m-auto text-secondary text-5xl font-bold mb-10">
             Pr<span className="bg-pelengkap rounded-full">o</span>jects
           </h1>
-          <div className="relative w-[1200px] m-auto mb-10">
+          {dataProjects.sort((c : any, d : any) => d.id - c.id).map((a: any,i : number) => (
+            <div key={a.id} className="relative w-[1200px] m-auto mb-10">
             <div className="border-2  border-secondary w-full h-[200px] bg-primary relative z-10 flex">
               <div className="m-auto">
                 <Image
                   src={Cafetariaapp}
                   alt="project1"
                   className="w-11/12 m-2"
+                  // width={300}
+                  // height={300}
                 />
               </div>
               <div>
@@ -49,21 +53,14 @@ export default function Home() {
                   {" "}
                   <span className="hover:bg-pelengkap rounded-full">
                     {" "}
-                    Cafetaria App
+                    {a.nama}
                   </span>
                 </h2>
                 <p className="mx-2 text-secondary text-sm">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-                  pellentesque, ligula finibus vulputate scelerisque, turpis
-                  magna dignissim leo, sed gravida risus diam id ex. Aliquam
-                  varius ante et ligula condimentum, sit amet imperdiet erat
-                  congue. Aliquam felis risus, cursus sed nisl eget, tristique
-                  feugiat eros. Sed mattis justo ac volutpat cursus. Curabitur
-                  facilisis ut ipsum et aliquet. Integer vulputate blandit erat
-                  ac venenatis.{" "}
+                  {a.deskripsi}
                 </p>
                 <div className="flex">
-                  {logo.map((m: any, i: number) => {
+                  {a.icon.map((m: any, i: number) => {
                     return (
                       <div
                         className="m-2 p-1 hover:bg-pelengkap rounded-full delay-100"
@@ -86,6 +83,8 @@ export default function Home() {
               test
             </div>
           </div>
+          ))}
+          
           {/* awal */}
           <div className="relative w-[1200px] m-auto mb-10">
             <div className="border-2  border-secondary w-full h-[200px] bg-primary relative z-10">
