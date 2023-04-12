@@ -38,7 +38,7 @@ export const Header = () => {
             I'm  <span className="bg-pelengkap rounded-full">Z</span>acky Al-Baehaki
           </h1>
           <p className="font-bold font-mono">
-            Web Developer
+             A Web Developer
           </p>
         </div>
       </div>
