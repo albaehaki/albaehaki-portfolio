@@ -38,8 +38,7 @@ export const Header = () => {
             I'm  <span className="bg-pelengkap rounded-full">Z</span>acky Al-Baehaki
           </h1>
           <p className="font-bold font-mono">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proi
-            pellentesque,
+            Web Developer
           </p>
         </div>
       </div>
