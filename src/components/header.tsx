@@ -8,7 +8,7 @@ import {
   siBehance,
 } from "simple-icons";
 import { SunIcon, Bars3BottomLeftIcon } from "@heroicons/react/24/solid";
-import ProfileDiri from "../assets/images/profil.jpeg";
+// import ProfileDiri from "../assets/images/profil.jpeg";
 import Image from "next/image";
 
 export const Header = () => {
@@ -30,8 +30,8 @@ export const Header = () => {
       <div className="absolute top-[200px] left-[100px] text-secondary flex w-[800px]">
         {/* <h1 className="text-4xl font-extrabold text-secondary">I'm</h1> */}
         <div className="relative">
-          <Image width={300} height={300} className="relative z-10" src={ProfileDiri} alt="profile" />
-          <Image width={300} height={300} className="bg-secondary absolute top-2 left-2" src={ProfileDiri} alt="profile"/>
+          <Image width={300} height={300} className="relative z-10" src="/images/profil.jpeg" alt="profile" />
+          <Image width={300} height={300} className="bg-secondary absolute top-2 left-2" src="/images/profil.jpeg" alt="profile"/>
         </div>
         <div className="mx-10">
           <h1 className="text-4xl font-extrabold text-secondary font-mono">

@@ -46,12 +46,12 @@ export default function Home() {
                 <Image
                   src={a.image}
                   alt="project1"
-                  className=" m-2"
-                  width={300}
-                  height={300}
+                  className=" ml-5"
+                  width={400}
+                  height={400}
                 />
               </div>
-              <div>
+              <div className="px-5">
                 <h2 className="mx-2 my-5 font-bold text-xl text-secondary ">
                   {" "}
                   <span className="hover:bg-pelengkap rounded-full">
