@@ -1,7 +1,10 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import Cafetariaapp from "../assets/images/cafetaria-app.png";
-import { siNextdotjs, siTailwindcss, siFirebase } from "simple-icons";
+import Wfhapp from "../assets/images/wfhapp.png";
+import Alumniapp from "../assets/images/alumniapp.jpg";
+import Akdalrt from "../assets/images/akdalrt.jpeg";
+import { siNextdotjs, siTailwindcss, siFirebase, siMui, siReact, siFigma } from "simple-icons";
 import { dataProjects } from "../data/project";
 
 // components
@@ -41,11 +44,11 @@ export default function Home() {
             <div className="border-2  border-secondary w-full h-[200px] bg-primary relative z-10 flex">
               <div className="m-auto">
                 <Image
-                  src={Cafetariaapp}
+                  src={a.image}
                   alt="project1"
-                  className="w-11/12 m-2"
-                  // width={300}
-                  // height={300}
+                  className=" m-2"
+                  width={300}
+                  height={300}
                 />
               </div>
               <div>
@@ -86,14 +89,7 @@ export default function Home() {
           ))}
           
           {/* awal */}
-          <div className="relative w-[1200px] m-auto mb-10">
-            <div className="border-2  border-secondary w-full h-[200px] bg-primary relative z-10">
-              test
-            </div>
-            <div className="border-2  border-secondary w-full h-[200px] bg-secondary absolute top-2 left-2">
-              test
-            </div>
-          </div>
+          
         </div>
       </Layout>
     </>
