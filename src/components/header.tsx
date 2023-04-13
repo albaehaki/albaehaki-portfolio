@@ -27,9 +27,9 @@ export const Header = () => {
       <SunIcon className="absolute top-0 right-0 w-8 text-secondary m-5 hover:bg-pelengkap rounded-full delay-100" />
       <Bars3BottomLeftIcon className="absolute top-0 left-0 w-8 text-secondary m-5 hover:bg-pelengkap rounded-full delay-100" />
       <div></div>
-      <div className="absolute top-[200px] left-[100px] text-secondary flex w-[800px]">
+      <div className="absolute top-[200px] left-[100px] text-secondary flex w-[200px] sm:w-[800px]">
         {/* <h1 className="text-4xl font-extrabold text-secondary">I'm</h1> */}
-        <div className="relative">
+        <div className="relative ">
           <Image width={300} height={300} className="relative z-10" src="/images/profil.jpeg" alt="profile" />
           <Image width={300} height={300} className="bg-secondary absolute top-2 left-2" src="/images/profil.jpeg" alt="profile"/>
         </div>

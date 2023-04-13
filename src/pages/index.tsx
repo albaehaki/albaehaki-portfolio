@@ -40,9 +40,9 @@ export default function Home() {
             Pr<span className="bg-pelengkap rounded-full">o</span>jects
           </h1>
           {dataProjects.sort((c : any, d : any) => d.id - c.id).map((a: any,i : number) => (
-            <div key={a.id} className="relative w-[1200px] m-auto mb-10">
-            <div className="border-2  border-secondary w-full h-[200px] bg-primary relative z-10 flex">
-              <div className="m-auto">
+            <div key={a.id} className="relative w-[300px] sm:w-[1200px] m-auto mb-10">
+            <div className="border-2  border-secondary w-full h-[150px] sm:h-[200px] bg-primary relative z-10 flex flex-col">
+              <div className=" w-[200px] sm:w-[400px] hidden sm:visible">
                 <Image
                   src={a.image}
                   alt="project1"
@@ -52,14 +52,14 @@ export default function Home() {
                 />
               </div>
               <div className="px-5">
-                <h2 className="mx-2 my-5 font-bold text-xl text-secondary ">
+                <h2 className="mx-2 mt-5 font-bold text-xl text-secondary ">
                   {" "}
                   <span className="hover:bg-pelengkap rounded-full">
                     {" "}
                     {a.nama}
                   </span>
                 </h2>
-                <p className="mx-2 text-secondary text-sm">
+                <p className="mx-2 text-secondary text-sm hidden sm:visible">
                   {a.deskripsi}
                 </p>
                 <div className="flex">
@@ -82,7 +82,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="border-2  border-secondary w-full h-[200px] bg-secondary absolute top-2 left-2 ">
+            <div className="border-2  border-secondary w-full h-[150px] sm:h-[200px] bg-secondary absolute top-2 left-2 ">
               test
             </div>
           </div>
