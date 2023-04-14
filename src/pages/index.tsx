@@ -40,7 +40,7 @@ export default function Home() {
             Pr<span className="bg-pelengkap rounded-full">o</span>jects
           </h1>
           {dataProjects.sort((c : any, d : any) => d.id - c.id).map((a: any,i : number) => (
-            <div key={a.id} className="relative w-[300px] sm:w-[1200px] m-auto mb-10">
+            <div key={a.id} className="relative w-[300px] sm:w-[1200px] m-auto mb-10 hidden">
             <div className="border-2  border-secondary w-full h-[150px] sm:h-[200px] bg-primary relative z-10 flex flex-col">
               <div className=" w-[200px] sm:w-[400px] hidden sm:visible">
                 <Image
