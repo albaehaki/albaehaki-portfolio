@@ -30,17 +30,30 @@ export const Header = () => {
       <div className="mx-auto mt-50 text-secondary flex flex-col sm:flex-row w-2/3 lg:w-[800px]">
         {/* <h1 className="text-4xl font-extrabold text-secondary">I'm</h1> */}
         <div className="relative mb-5">
-          <Image width={300} height={300} className="relative z-10" src="/images/profil.jpeg" alt="profile" />
-          <Image width={300} height={300} className="bg-secondary absolute top-2 left-2 mix-blend-overlay" src="/images/profil.jpeg" alt="profile"/>
-          {/* <div className="absolute top-2 left-2 w-full  bg-secondary mix-blend-overlay opacity-75"></div> */}
+          <Image
+            width={300}
+            height={300}
+            className="absolute z-10"
+            src="/images/profil.jpeg"
+            alt="profile"
+          />
+          <div className="relative">
+            <Image
+              width={300}
+              height={300}
+              src="/images/profil.jpeg"
+              alt="gambar"
+              className=""
+            />
+            <div className="absolute top-2 left-2 w-full h-full  bg-secondary opacity-100"></div>
+          </div>
         </div>
-        <div className=" sm:mx-5">
-          <h1 className="text-3xl md:text-6xl font-extrabold text-secondary font-sans">
-            I'm  <span className="bg-pelengkap rounded-full">Z</span>acky <br/>Al-Baehaki
+        <div className="relative sm:mx-5">
+          <h1 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold text-secondary font-sans">
+            I'm Z<span className="bg-pelengkap rounded-full">a</span>cky <br />
+            Al-Baehaki
           </h1>
-          <p className="font-bold font-mono">
-             A Web Developer
-          </p>
+          <p className="font-thin md:text-2xl font-mono">A Web Developer</p>
         </div>
       </div>
       {/* test */}
