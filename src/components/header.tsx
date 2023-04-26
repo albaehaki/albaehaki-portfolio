@@ -10,6 +10,7 @@ import {
 } from "simple-icons";
 import { TweenMax, Power3, gsap } from "gsap";
 import { SunIcon, Bars3BottomLeftIcon } from "@heroicons/react/24/solid";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 // import ProfileDiri from "../assets/images/profil.jpeg";
 import Image from "next/image";
 import { text } from "stream/consumers";
@@ -20,6 +21,8 @@ type TextType = {
 
 export const Header = () => {
   const textRef = useRef<HTMLHeadingElement>(null);
+  const textRef1 = useRef<HTMLParagraphElement>(null);
+  const imgRef = useRef<HTMLDivElement>(null);
   const logo = [
     {
       index: 0,
@@ -48,58 +51,46 @@ export const Header = () => {
   ];
 
   useEffect(() => {
-    // const textElement = textRef.current!;
-    // if (textElement) {
-    //   const text = "I'm Zacky Al-Baehaki";
-    //   // const textValue = textElement.textContent!;
-    //   // const textLength = textValue.length;
-    //   // console.log(textElement, textValue, textLength);
-    //   textElement.textContent = "";
-    //   let index = 0;
-
-    //   // function animateText() {
-    //   //   textElement.textContent! += text[index];
-    //   //   index++;
-    //   //   if (index >= text.length) {
-    //   //     index = 0;
-    //   //     console.log(text[index]);
-    //   //   }
-    //   // }
-
-    //   gsap.to(textElement, {
-    //       duration: 2,
-    //       delay: 1,
-    //       opacity: 1,
-    //       onComplete: () => {
-    //         setInterval(() => {
-    //           textElement.textContent! += text[index];
-    //           index++;
-    //           if (index >= text.length) {
-    //             index = 0;
-    //             console.log(text[index]);
-    //           }
-    //         }, 100);
-    //       },
-          
-    //     });
-
-    // }
-
     const textElement = textRef.current;
+    const textElement1 = textRef1.current;
+
     if (textElement) {
       textElement.textContent = "";
+      textElement1.textContent = "";
       const text = "I'm Zacky Al-Baehaki";
+      const text1 = "A Web Developer";
       let index = 0;
+      let i = 0;
       let interval: any;
-  
-      const animateText = ()  => {
+      let interval1: any;
+
+      const animateText = () => {
         textElement.textContent = text.slice(0, index + 1);
         index++;
         if (index >= text.length) {
           clearInterval(interval);
+          gsap.to(textElement1, {
+            duration: 0.5,
+            delay: 0.5,
+            opacity: 1,
+            onComplete: () => {
+              interval1 = setInterval(animateText1, 100);
+            },
+          });
         }
-      }
-  
+      };
+      const animateText1 = () => {
+        textElement1.textContent = text1.slice(0, i + 1);
+        i++;
+        if (i >= text1.length) {
+          clearInterval(interval1);
+        }
+      };
+      gsap.from(imgRef, {
+        opacity: 0,
+        delay: 2,
+        duration: 1,
+      });
       gsap.to(textElement, {
         duration: 2,
         delay: 1,
@@ -120,7 +111,7 @@ export const Header = () => {
       <div></div>
       <div className="mx-auto mt-50 text-secondary flex flex-col sm:flex-row w-2/3 lg:w-[800px]">
         {/* <h1 className="text-4xl font-extrabold text-secondary">I'm</h1> */}
-        <div className="relative mb-5">
+        <div ref={imgRef} className="relative mb-5">
           <Image
             width={300}
             height={300}
@@ -147,7 +138,9 @@ export const Header = () => {
             I'm Z<span className="bg-pelengkap rounded-full">a</span>cky <br />
             Al-Baehaki
           </h1>
-          <p className="font-thin md:text-2xl font-mono">A Web Developer</p>
+          <p ref={textRef1} className="font-thin md:text-2xl font-mono">
+            A Web Developer
+          </p>
         </div>
       </div>
       {/* test */}
