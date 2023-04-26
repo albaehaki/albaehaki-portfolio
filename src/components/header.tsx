@@ -56,7 +56,7 @@ export const Header = () => {
 
     if (textElement) {
       textElement.textContent = "";
-      textElement1.textContent = "";
+      textElement1!.textContent = "";
       const text = "I'm Zacky Al-Baehaki";
       const text1 = "A Web Developer";
       let index = 0;
@@ -80,7 +80,7 @@ export const Header = () => {
         }
       };
       const animateText1 = () => {
-        textElement1.textContent = text1.slice(0, i + 1);
+        textElement1!.textContent = text1.slice(0, i + 1);
         i++;
         if (i >= text1.length) {
           clearInterval(interval1);
