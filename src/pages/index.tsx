@@ -1,3 +1,4 @@
+import React, {useState, useRef, useEffect} from "react";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import Cafetariaapp from "../assets/images/cafetaria-app.png";
@@ -6,6 +7,8 @@ import Alumniapp from "../assets/images/alumniapp.jpg";
 import Akdalrt from "../assets/images/akdalrt.jpeg";
 import { siNextdotjs, siTailwindcss, siFirebase, siMui, siReact, siFigma } from "simple-icons";
 import { dataProjects } from "../data/project";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 // components
 import { Layout } from "../components/layout";
@@ -32,6 +35,22 @@ const logo : any = [ siNextdotjs, siTailwindcss, siFirebase ]
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const listRef = useRef<HTMLDivElement>(null);
+  gsap.registerPlugin(ScrollTrigger);
+  useEffect(() => {
+    const tl = gsap.timeline({ repeat: 2, repeatDelay: 1 });
+    tl.to(listRef, { y: 50, duration: 1 });
+    tl.to(listRef, { x: 100, duration: 1 });
+    tl.to(listRef, { opacity: 0, duration: 1 });
+
+    // then we can control the whole thing easily...
+    tl.pause();
+    tl.resume();
+    tl.seek(1.5);
+    tl.reverse();
+  }, [])
+  
+  console.log(listRef)
   return (
     <>
       <Layout>
@@ -40,7 +59,7 @@ export default function Home() {
             Pr<span className="bg-pelengkap rounded-full">o</span>jects
           </h1>
           {dataProjects.sort((c : any, d : any) => d.id - c.id).map((a: any,i : number) => (
-            <div key={a.id} className="relative w-[300px] sm:w-[600px] md:w-[700px] xl:w-[1200px] m-auto mb-10 ">
+            <div ref={listRef} key={a.id} className="relative w-[300px] sm:w-[600px] md:w-[700px] xl:w-[1200px] m-auto mb-10 ">
             <div className="border-2  border-secondary w-full h-[150px] sm:h-[200px] bg-primary relative z-10 flex flex-col sm:flex-row">
               <div className=" max-w-[200px] my-auto  hidden sm:block">
                 <Image

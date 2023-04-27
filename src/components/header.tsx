@@ -22,7 +22,7 @@ type TextType = {
 export const Header = () => {
   const textRef = useRef<HTMLHeadingElement>(null);
   const textRef1 = useRef<HTMLParagraphElement>(null);
-  const imgRef = useRef<HTMLImageElement>(null);
+  const imgRef = useRef<HTMLDivElement>(null);
   const logo = [
     {
       index: 0,
@@ -86,17 +86,29 @@ export const Header = () => {
           clearInterval(interval1);
         }
       };
-      gsap.from(imgRef, {
-        opacity: 0,
-        // delay: 2,
-        duration: 1,
-        ease: "power2.inOut",
-      });
+      // gsap.from(imgRef, {
+      //   opacity: 1,
+      //   delay: 2,
+      //   duration: 1,
+      //   y: 100,
+      //   ease: "power2.Out",
+      // });
       // gsap.to(imgRef, {
       //   opacity: 1,
       //   delay: 2,
       //   duration: 1,
       // });
+      //WITH Timelines (cleaner, more versatile)
+      const tl = gsap.timeline({ repeat: 2, repeatDelay: 1 });
+      tl.to(imgRef, { y: 50, duration: 1 });
+      tl.to(imgRef, { x: 100, duration: 1 });
+      tl.to(imgRef, { opacity: 0, duration: 1 });
+
+      // then we can control the whole thing easily...
+      tl.pause();
+      tl.resume();
+      tl.seek(1.5);
+      tl.reverse();
       gsap.to(textElement, {
         duration: 2,
         delay: 1,
@@ -117,9 +129,8 @@ export const Header = () => {
       <div></div>
       <div className="mx-auto mt-50 text-secondary flex flex-col sm:flex-row w-2/3 lg:w-[800px]">
         {/* <h1 className="text-4xl font-extrabold text-secondary">I'm</h1> */}
-        <div className="relative mb-5">
+        <div ref={imgRef} className="relative mb-5">
           <Image
-            ref={imgRef}
             width={300}
             height={300}
             className="absolute z-10"
@@ -128,7 +139,6 @@ export const Header = () => {
           />
           <div className="relative">
             <Image
-              ref={imgRef}
               width={300}
               height={300}
               src="/images/profil.jpeg"
